@@ -1,0 +1,6 @@
+server:
+  port: 11090
+
+spring:
+  application:
+    name: swagger-register
