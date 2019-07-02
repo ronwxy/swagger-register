@@ -18,7 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <sbu.version>jboost-1.9.4</sbu.version>
+        <sbu.version>jboost-1.9.4-SNAPSHOT</sbu.version>
         <springfox.version>2.9.2</springfox.version>
         <swagger.version>1.5.21</swagger.version>
         <docker.image.prefix>springboot</docker.image.prefix>
@@ -82,7 +82,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>1.2.0</version>
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>${basedir}</dockerDirectory>
