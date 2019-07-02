@@ -2,6 +2,7 @@ package cn.jboost.swagger.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,9 @@ public class SwaggerRegisterService implements ApplicationRunner {
 
     public static final String STORE_KEY_PROJECT = "project";
     public static final String STORE_KEY_URL = "url";
+
+    @Value("${swagger.register-data-path:/register-data}")
+    private String swaggerRegisterDataPath;
 
 
     /**
@@ -110,7 +114,15 @@ public class SwaggerRegisterService implements ApplicationRunner {
     }
 
     private File getBaseRegisterDir() {
-        File basePathDir = new File(System.getProperty("user.home"), "swagger-registers");
+        File basePathDir = new File(swaggerRegisterDataPath);
         return basePathDir;
+    }
+
+    public String getSwaggerRegisterDataPath() {
+        return swaggerRegisterDataPath;
+    }
+
+    public void setSwaggerRegisterDataPath(String swaggerRegisterDataPath) {
+        this.swaggerRegisterDataPath = swaggerRegisterDataPath;
     }
 }

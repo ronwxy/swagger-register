@@ -5,6 +5,10 @@ spring:
   application:
     name: swagger-register
 
+#注册服务数据保存路径
+swagger:
+  register-data-path: ./register-data
+
 logging:
   path: ./logs
   level:
@@ -13,6 +17,9 @@ logging:
 ---
 spring:
   profiles: dev
+
+swagger:
+  register-data-path: /register-data
 
 logging:
   path: /logs
